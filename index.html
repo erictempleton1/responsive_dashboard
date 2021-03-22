@@ -1,21 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    defer></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
   <title>Responsive Dashboard</title>
 </head>
+
 <body>
   <div class="container">
-    <div class="sidenav text-bright">Sidenav</div>
-    <div class="content text-bright">
-      <div class="toolbar text-bright">Toolbar</div>
+    <div class="sidenav text_bright">Sidenav</div>
+    <div class="content text_bright" x-data="{ open: false }">
+      <div class="toolbar text_bright">
+        <div class="toolbar__main_text">Dashboard</div>
+        <button class="toolbar__mobile_menu_button" x-show="!open" @click="open = true">
+          <svg class="toolbar__menu_icon" class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <button class="toolbar__mobile_menu_button" x-show="open" @click="open = true">
+          <svg class="toolbar__menu_icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile_menu" x-show="open" @click.away="open = false">
+        <nav>
+          <ul>
+            <li>
+              <a class="mobile_menu__nav_item nav_item_active" href="#dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a class="mobile_menu__nav_item" href="#analytics">Analytics</a>
+            </li>
+            <li>
+              <a class="mobile_menu__nav_item" href="#users">Users</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
       Content
     </div>
   </div>
 </body>
+
 </html>

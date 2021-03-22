@@ -94,10 +94,58 @@ p {
 
 .toolbar {
   display: flex;
+  align-items: center;
+  background-color: var(--oxford-blue);
+  padding: 1rem;
+}
+
+.toolbar__menu_icon {
+  height: 20px;
+  width: 20px;
+}
+
+.toolbar__main_text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.mobile_menu {
   background-color: var(--oxford-blue);
 }
 
-.text-bright {
+.mobile_menu__nav_item {
+  padding: 1rem;
+  display: block;
+}
+
+.mobile_menu__nav_item:hover {
+  background-color: var(--independence);
+}
+
+.nav_item_active {
+  background-color: var(--independence);
+}
+
+.toolbar__mobile_menu_button {
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toolbar__mobile_menu_button {
+    display: none;
+  }
+
+  .mobile_menu {
+    display: none;
+  }
+}
+
+.text_bright {
   color: var(--turquoise-blue);
 }
 /* END DASHBOARD */
