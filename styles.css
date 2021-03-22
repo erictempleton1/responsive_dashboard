@@ -1,0 +1,103 @@
+/* START RESETS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0;
+}
+/* END RESETS */
+
+/* START DASHBOARD */
+:root {
+  --oxford-blue: #0b132bff;
+  --space-cadet: #1c2541ff;
+  --independence: #3a506bff;
+  --maximum-blue-green: #5bc0beff;
+  --turquoise-blue: #6fffe9ff;
+}
+
+.container {
+  display: flex;
+}
+
+.sidenav {
+  /* We want the sidenav to take up the entire height of the viewport */
+  height: 100vh;
+  /* Hide the sidenav on screens less than 640px */
+  display: none;
+  flex-direction: column;
+  background-color: var(--oxford-blue);
+}
+
+@media (min-width: 640px) {
+  /* Show the sidenav on screens larger than 640px */
+  .sidenav {
+    display: flex;
+  }
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: var(--space-cadet);
+}
+
+.toolbar {
+  display: flex;
+  background-color: var(--oxford-blue);
+}
+
+.text-bright {
+  color: var(--turquoise-blue);
+}
+/* END DASHBOARD */
